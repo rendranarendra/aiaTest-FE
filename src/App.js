@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import './App.css'
+import Logo from './img/FlickrIcon.svg'
 
 class App extends Component {
   constructor(props) {
@@ -57,12 +59,21 @@ class App extends Component {
       return <div>Loading...</div>;
     }
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div>
+        <div className="container-photo">
+        <img src={Logo} alt="home" className="logo"/>
+        </div>
+      <form 
+      onSubmit={this.handleSubmit}
+      className="container"
+      >
         <input
           label="Search Image"
           icon="search"
           onChange={this.handleChange}
           type="text"
+          className="input"
+         
         ></input>
         <button>Send data!</button>
         <ul>
@@ -71,6 +82,7 @@ class App extends Component {
           ))}
         </ul>
       </form>
+      </div>
     );
   }
 }
