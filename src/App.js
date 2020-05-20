@@ -16,7 +16,7 @@ class App extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     fetch(
-      `http://localhost:8000/api/v1/flickr?tag=${this.state.tag}&page=${this.page}`
+      `https://aia-project.herokuapp.com/api/v1/flickr?tag=${this.state.tag}&page=${this.page}`
     )
       .then((res) => res.json())
       .then((json) => {
@@ -32,7 +32,7 @@ class App extends Component {
 
   componentDidMount() {
     fetch(
-      `http://localhost:8000/api/v1/flickr?tag=${this.state.tag}&page=${this.page}`
+      `https://aia-project.herokuapp.com/api/v1/flickr?tag=${this.state.tag}&page=${this.page}`
     )
       .then((res) => res.json())
       .then((json) => {
